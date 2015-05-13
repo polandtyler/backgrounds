@@ -1,0 +1,799 @@
+{
+    "ADD_FILES_ERROR": [
+        {
+            "cmd": "add",
+            "exit_code": 128,
+            "stderr": "fatal: pathspec '(.+)' did not match any files",
+            "stderr_args": [
+                "file_path"
+            ]
+        }
+    ],
+    "ADD_SUBMODULE_PATH_ALREADY_EXISTS_ERROR": [
+        {
+            "cmd": "submodule",
+            "subcmd": "add",
+            "exit_code": 1,
+            "stderr": "'(.+)' already exists",
+            "stderr_args": [
+                "submodule_path"
+            ]
+        }
+    ],
+    "ADD_SUBMODULE_GIT_DIR_ALREADY_EXISTS_ERROR": [
+        {
+            "cmd": "submodule",
+            "subcmd": "add",
+            "exit_code": 1,
+            "stderr": "A git directory for '(.+)' is found locally with remote",
+            "stderr_args": [
+                "submodule_name"
+            ]
+        }
+    ],    
+    "APPLY_PATCH_CORRUPT_ERROR": [
+        {
+            "cmd": "apply",
+            "exit_code": 128,
+            "stderr": "fatal: corrupt patch at line (\\d+)",
+            "stderr_args": [
+                "patch_line_number"
+            ]
+        },
+        {
+            "cmd": "apply",
+            "exit_code": 128,
+            "stderr": "fatal: patch with only garbage at line (\\d+)",
+            "stderr_args": [
+                "patch_line_number"
+            ]
+        }
+    ],
+    "APPLY_PATCH_WITH_NO_CHANGES_ERROR": [
+        {
+            "cmd": "apply",
+            "exit_code": 1,
+            "stderr": "No changes"
+        }
+    ],
+    "APPLY_PATCH_WITH_NO_TARGET_ERROR": [
+        {
+            "cmd": "apply",
+            "exit_code": 1,
+            "stderr": "No such file or directory"
+        }
+    ],
+    "APPLY_STASH_MERGE_CONFLICTS_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stdout": "Merge conflict in"
+        }
+    ],
+    "APPLY_STASH_NOT_FOUND_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "fatal: Log for 'stash' only has (\\d+) entries",
+            "subcmd": "apply"
+        }
+    ],
+    "APPLY_STASH_NO_STASHES_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "No stash found",
+            "subcmd": "apply"
+        },
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "fatal: ambiguous argument 'stash@\\{(\\d+)\\}': unknown revision or path not in the working tree",
+            "stderr_args": [
+                "stash_index"
+            ],
+            "subcmd": "apply"
+        }
+    ],
+    "APPLY_STASH_UNCOMMITTED_CHANGES_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 128,
+            "stderr": "Your local changes to the following files would be overwritten",
+            "subcmd": "apply"
+        }
+    ],
+    "ARCHIVE_FILES_ERROR": [
+        {
+            "cmd": "archive",
+            "exit_code": 128,
+            "stderr": "fatal: path not found:"
+        },
+        {
+            "cmd": "archive",
+            "exit_code": 128,
+            "stderr": "Not a valid object name"
+        }
+    ],
+    "BAD_DEFAULT_REVISION_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "bad default revision"
+        }
+    ],
+    "BAD_REVISION_ERROR": [
+        {
+            "exit_code": 1,
+            "stderr": [
+                "checkout (.+): command returned error:"
+            ]
+        }
+    ],
+    "BLOB_NOT_FOUND_ERROR": [
+        {
+            "cmd": "show",
+            "exit_code": 128,
+            "stderr": "unknown revision or path not in the working tree"
+        },
+        {
+            "cmd": "show",
+            "exit_code": 128,
+            "stderr": "Path '(.+)' does not exist in '(.+)'",
+            "stderr_args": [
+                "filepath",
+                "revision"
+            ]
+        },
+        {
+            "cmd": "show",
+            "exit_code": 128,
+            "stderr": "Invalid object name '(.+)'",
+            "stderr_args": [
+                "revision"
+            ]
+        }
+    ],
+    "CHECKOUT_UNCOMMITTED_CHANGES_ERROR": [
+        {
+            "cmd": "checkout",
+            "exit_code": 1,
+            "stderr": "Your local changes to the following files would be overwritten by"
+        }
+    ],
+    "COMMAND_USAGE_ERROR": [
+        {
+            "exit_code": 129,
+            "stderr": [
+                "^Usage:"
+            ]
+        },
+        {
+            "exit_code": 1,
+            "stdout": [
+                "^Usage:"
+            ]
+        }
+    ],
+    "CONFIG_BAD_VALUE_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": [
+                "fatal: bad config value",
+                "fatal: bad numeric config value"
+            ]
+        }
+    ],
+    "CONFIG_INVALID_FILE_ERROR": [
+        {
+            "cmd": "config",
+            "exit_code": 128,
+            "stderr": "bad config file line"
+        }
+    ],
+    "CONFIG_KEY_NOT_FOUND_ERROR": [
+        {
+            "cmd": "config",
+            "exit_code": 1,
+            "stderr": ""
+        },
+        {
+            "cmd": "config",
+            "exit_code": 5,
+            "stderr": ""
+        }
+    ],
+    "CONFIG_MULTIPLE_VALUES_FOR_KEY_ERROR": [
+        {
+            "cmd": "config",
+            "exit_code": 2,
+            "stderr": "error: More than one value for the key"
+        },
+        {
+            "cmd": "config",
+            "exit_code": 5,
+            "stderr": "has multiple values"
+        }
+    ],
+    "CONFIG_READ_ERROR": [
+        {
+            "cmd": "config",
+            "exit_code": 3
+        }
+    ],
+    "CONFIG_SECTION_NOT_FOUND_ERROR": [
+        {
+            "cmd": "config",
+            "exit_code": 128,
+            "stderr": "fatal: No such section"
+        }
+    ],
+    "CONFIG_WRITE_ERROR": [
+        {
+            "cmd": "config",
+            "exit_code": 4
+        }
+    ],
+    "CREATE_BRANCH_FROM_STASH_INVALID_NAME_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 128,
+            "stderr": "fatal: git checkout: we do not like '(.+)' as a branch name.",
+            "stderr_args": [
+                "refname"
+            ],
+            "subcmd": "branch"
+        }
+    ],
+    "CREATE_BRANCH_FROM_STASH_NOT_FOUND_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "fatal: Log for 'stash' only has (\\d+) entries",
+            "subcmd": "branch"
+        }
+    ],
+    "CREATE_BRANCH_FROM_STASH_NO_STASHES_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "No stash found",
+            "subcmd": "branch"
+        },
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "fatal: ambiguous argument 'stash@\\{(\\d+)\\}': unknown revision or path not in the working tree",
+            "stderr_args": [
+                "stash_index"
+            ],
+            "subcmd": "branch"
+        }
+    ],
+    "CREATE_BRANCH_FROM_STASH_UNCOMMITTED_CHANGES_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 128,
+            "stderr": "Your local changes to the following files would be overwritten",
+            "subcmd": "branch"
+        }
+    ],
+    "CREATE_BRANCH_INVALID_NAME_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: '(.+)' is not a valid branch name",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "CREATE_BRANCH_INVALID_OBJECT_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: Not a valid object name: '(.+)'",
+            "stderr_args": [
+                "object_hash"
+            ]
+        }
+    ],
+    "CREATE_BRANCH_REF_ALREADY_EXISTS_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: A branch named '(.+)' already exists",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "CREATE_REMOTE_ALREADY_EXISTS_ERROR": [
+        {
+            "cmd": "remote",
+            "exit_code": 128,
+            "stderr": "fatal: remote (.+) already exists",
+            "stderr_args": [
+                "remote_name"
+            ],
+            "subcmd": "add"
+        }
+    ],
+    "CREATE_REMOTE_INVALID_NAME_ERROR": [
+        {
+            "cmd": "remote",
+            "exit_code": 128,
+            "stderr": "fatal: '(.+)' is not a valid remote name",
+            "stderr_args": [
+                "remote_name"
+            ],
+            "subcmd": "add"
+        }
+    ],
+    "CREATE_TAG_ALREADY_EXISTS_ERROR": [
+        {
+            "cmd": "tag",
+            "exit_code": 128,
+            "stderr": "fatal: tag '(.+)' already exists",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "CREATE_TAG_INVALID_OBJECT_ERROR": [
+        {
+            "cmd": "tag",
+            "exit_code": 128,
+            "stderr": "fatal: Failed to resolve '(.+)' as a valid ref",
+            "stderr_args": [
+                "revision"
+            ]
+        }
+    ],
+    "DELETE_BRANCH_NO_SUCH_BRANCH_ERROR": [
+        {
+            "exit_code": 1,
+            "stderr": "error: branch '(.+)' not found",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "DELETE_CURRENT_BRANCH_ERROR": [
+        {
+            "exit_code": 1,
+            "stderr": "error: Cannot delete the branch '(.+)' which you are currently on",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "DELETE_TAG_NOT_FOUND_ERROR": [
+        {
+            "cmd": "tag",
+            "exit_code": 1,
+            "stderr": "error: tag '(.+)' not found",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "DELETE_UNMERGED_BRANCH_ERROR": [
+        {
+            "exit_code": 1,
+            "stderr": "The branch '(.+)' is not fully merged",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "DROP_STASH_NOT_FOUND_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "fatal: Log for 'stash' only has (\\d+) entries",
+            "subcmd": "drop"
+        }
+    ],
+    "DROP_STASH_NO_STASHES_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "No stash found",
+            "subcmd": "drop"
+        },
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "fatal: ambiguous argument 'stash@\\{(\\d+)\\}': unknown revision or path not in the working tree",
+            "stderr_args": [
+                "stash_index"
+            ],
+            "subcmd": "drop"
+        }
+    ],
+    "GIT_ASKPASS_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": [
+                "Device not configured"
+            ]
+        }
+    ],
+    "GIT_SVN_INSTALLATION_ERROR": [
+        {
+            "cmd": "svn",
+            "stderr": [
+                "@INC"
+            ]
+        }
+    ],
+    "INDEX_LOCK_ERROR": [
+        {
+            "stderr": [
+                "fatal: Unable to create .+index.lock.+: File exists"
+            ]
+        }
+    ],
+    "LOG_NO_SUCH_REVISION_ERROR": [
+        {
+            "cmd": "log",
+            "exit_code": 128,
+            "stderr": "fatal: ambiguous argument '(.+)': unknown revision or path not in the working tree",
+            "stderr_args": [
+                "revision"
+            ]
+        }
+    ],
+    "MERGETOOL_MERGE_FAILED_ERROR": [
+        {
+            "cmd": "mergetool",
+            "exit_code": 1,
+            "stderr": "merge of (.+) failed",
+            "stderr_args": [
+                "filepath"
+            ]
+        }
+    ],
+    "MERGE_CONFLICTS_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "merge"
+            ],
+            "exit_code": 1,
+            "stdout": "Automatic merge failed"
+        },
+        {
+            "cmd": [
+                "pull",
+                "merge"
+            ],
+            "exit_code": 1,
+            "stderr": "Failed to merge"
+        }
+    ],
+    "MERGE_UNCOMMITTED_CHANGES_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "merge"
+            ],
+            "exit_code": 1,
+            "stderr": "Your local changes to the following files would be overwritten by"
+        }
+    ],
+    "MERGE_UNMERGED_CHANGES_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "merge",
+                "cherry-pick",
+                "revert"
+            ],
+            "exit_code": 1,
+            "stderr": "is not possible because you have unmerged files"
+        }
+    ],
+    "MOVE_FILE_ALREADY_EXISTS_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: destination exists, source=(.+), destination=(.+)",
+            "stderr_args": [
+                "source",
+                "destination"
+            ]
+        }
+    ],
+    "MOVE_FILE_DESTINATION_DIRECTORY_MISSING_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: renaming '(.+)' failed: No such file or directory",
+            "stderr_args": [
+                "filename"
+            ]
+        }
+    ],
+    "MOVE_FILE_NOT_UNDER_VERSION_CONTROL_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: not under version control, source=(.+), destination=(.+)",
+            "stderr_args": [
+                "source",
+                "destination"
+            ]
+        }
+    ],
+    "MOVE_FILE_OUTSIDE_REPOSITORY_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: '(.+)' is outside repository",
+            "stderr_args": [
+                "file_path"
+            ]
+        }
+    ],
+    "MOVE_FILE_SELF_TARGET_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: can not move directory into itself, source=(.+), destination=(.+)",
+            "stderr_args": [
+                "source",
+                "destination"
+            ]
+        }
+    ],
+    "MOVE_FILE_SOURCE_DIRECTORY_EMPTY_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: source directory is empty, source=(.+), destination=(.+)",
+            "stderr_args": [
+                "source",
+                "destination"
+            ]
+        }
+    ],
+    "MOVE_FILE_SOURCE_NOT_FOUND_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: bad source, source=(.+), destination=(.+)",
+            "stderr_args": [
+                "source",
+                "destination"
+            ]
+        }
+    ],
+    "NO_DEFAULT_MERGE_BRANCH_ERROR": [
+        {
+            "exit_code": 1,
+            "stderr": [
+                "you must specify a branch",
+                "There are no candidates for merging among the refs that you just fetched"
+            ]
+        }
+    ],
+    "NO_GIT_REPO_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": [
+                "fatal: Not a git repository"
+            ]
+        }
+    ],
+    "NO_REFS_ERROR": [
+        {
+            "cmd": "show-ref",
+            "exit_code": 1,
+            "stderr": ""
+        }
+    ],
+    "NO_WORK_TREE_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": [
+                "fatal: This operation must be run in a work tree"
+            ]
+        },
+        {
+            "exit_code": 1,
+            "stderr": [
+                "cannot be used without a working tree"
+            ]
+        }
+    ],
+    "REBASE_CONFLICTS_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "rebase"
+            ],
+            "exit_code": 1,
+            "stdout": "When you have resolved this problem"
+        }
+    ],
+    "REBASE_UNCOMMITTED_CHANGES_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "rebase"
+            ],
+            "exit_code": 1,
+            "stdout": "You have unstaged changes"
+        }
+    ],
+    "REBASE_UNMERGED_CHANGES_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "rebase"
+            ],
+            "exit_code": 1,
+            "stdout": "You must edit all merge conflicts"
+        }
+    ],
+    "REFS_READ_ERROR": [
+        {
+            "exit_code": 255,
+            "stderr": "error: some refs could not be read"
+        }
+    ],
+    "REMOTE_AUTH_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": [
+                "Too  many  authentication failure",
+                "Authentication failed",
+                "Permission denied",
+                "fatal: HTTP request failed"
+            ]
+        }
+    ],
+    "REMOTE_CONNECTION_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": [
+                "does not appear to be a git repository",
+                "Connection refused",
+                "Operation timed out",
+                "not found",
+                "Could not find Repository"
+            ]
+        }
+    ],
+    "REMOTE_PUSH_NO_UPSTREAM_BRANCH_ERROR": [
+        {
+            "cmd": "push",
+            "exit_code": 128,
+            "stdout": [
+                "has no upstream branch"
+            ]
+        }
+    ],
+    "REMOTE_PUSH_REJECTED_ERROR": [
+        {
+            "cmd": "push",
+            "exit_code": 1,
+            "stderr": [
+                "[rejected]"
+            ]
+        }
+    ],
+    "REMOTE_SYNC_ERROR": [
+        {
+            "cmd": [
+                "pull",
+                "push"
+            ],
+            "exit_code": 1
+        }
+    ],
+    "RENAME_BRANCH_INVALID_OBJECT_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "error: refname (.+) not found",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "RENAME_BRANCH_REF_ALREADY_EXISTS_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: A branch named '(.+)' already exists",
+            "stderr_args": [
+                "refname"
+            ]
+        }
+    ],
+    "RENAME_REMOTE_ALREADY_EXISTS_ERROR": [
+        {
+            "cmd": "remote",
+            "exit_code": 128,
+            "stderr": "fatal: remote (.+) already exists",
+            "stderr_args": [
+                "remote_name"
+            ],
+            "subcmd": "rename"
+        }
+    ],
+    "RENAME_REMOTE_INVALID_NAME_ERROR": [
+        {
+            "cmd": "remote",
+            "exit_code": 128,
+            "stderr": "fatal: '(.+)' is not a valid remote name",
+            "stderr_args": [
+                "remote_name"
+            ],
+            "subcmd": "rename"
+        }
+    ],
+    "RM_OPERATION_NOT_PERMITTED_ERROR": [
+        {
+            "cmd": "rm",
+            "exit_code": 128,
+            "stderr": "fatal: git rm: '(.+)': Operation not permitted",
+            "stderr_args": [
+                "submodule_path"
+            ]
+        }
+    ],
+    "RM_LOCAL_MODIFICATIONS_ERROR": [
+        {
+            "cmd": "rm",
+            "exit_code": 1,
+            "stderr": "error: the following file"
+        }
+    ],
+    "SAVE_STASH_INITIAL_COMMIT_ERROR": [
+        {
+            "cmd": "stash",
+            "exit_code": 1,
+            "stderr": "You do not have the initial commit yet"
+        }
+    ],
+    "SUBMODULE_STATUS_MISSING_GIT_DIR_ERROR": [
+        {
+            "cmd": "submodule",
+            "stderr": "fatal: Not a git repository: .*/.git/modules/(.+)",
+            "stderr_args": [
+                "submodule_path"
+            ],
+            "subcmd": "status"
+        }
+    ],
+    "SUBMODULE_STATUS_MISSING_MAPPING_ERROR": [
+        {
+            "cmd": "submodule",
+            "stderr": "No submodule mapping found in .gitmodules for path '(.+)'",
+            "stderr_args": [
+                "submodule_path"
+            ],
+            "subcmd": "status"
+        }
+    ],
+    "TRACK_BRANCH_INVALID_OBJECT_ERROR": [
+        {
+            "exit_code": 128,
+            "stdout": "fatal: Not a valid object name: '(.+)'",
+            "stdout_args": [
+                "revision"
+            ]
+        }
+    ],
+    "TREE_NOT_A_TREE_OBJECT_ERROR": [
+        {
+            "cmd": "ls-tree",
+            "exit_code": 128,
+            "stderr": "fatal: not a tree object"
+        }
+    ],
+    "TREE_NOT_FOUND_ERROR": [
+        {
+            "cmd": "ls-tree",
+            "exit_code": 128,
+            "stderr": "fatal: Not a valid object name"
+        }
+    ],
+    "UPDATE_INDEX_NO_SUCH_FILE_ERROR": [
+        {
+            "exit_code": 128,
+            "stderr": "fatal: Unable to mark file"
+        }
+    ]
+}

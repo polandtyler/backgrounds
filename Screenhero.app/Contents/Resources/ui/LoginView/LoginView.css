@@ -1,0 +1,284 @@
+.mac .loginview .container-pointer {
+	fill: white;
+}
+
+#loginview-container {
+	width: 305px;
+	/*width: 280px;*/
+	height: 480px;
+	/*border: 1px solid #cccccc;*/
+	/*border-radius: 3px;*/
+	position: relative;
+	overflow: hidden;
+}
+
+.loginview-content {
+	height: 376px;
+}
+
+.loginview-content > div, .loginview-signin-holder > div, .loginview-footer > div {
+	width: 210px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loginview-header > div {
+	width: 220px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 35px;
+}
+
+.loginview-logo {
+	padding-top: 42px;
+}
+
+.loginview-logo > svg {
+	height: 30px;
+	width: 220px;
+}
+
+
+/* sign in fields */
+
+.loginview-fields {
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.loginview-content .loginview-fields {
+	/* don't give signup form boldness */
+	padding-top: 30px;
+	font-weight: bold;
+}
+
+.loginview-fields input[type=text],.loginview-fields input[type=password] {
+	width: 195px;
+	font-weight: normal;
+}
+
+.loginview-label-email {
+	padding-bottom: 5px;
+}
+
+.loginview-label-password {
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+.forgot-password-label { 
+	/* 'forgot password?' label */
+	float: right;
+	margin-top: 3px;
+	font-size: 11px;
+	opacity: 0.3;
+}
+.forgot-password-label:hover { 
+	border-radius: 7px;
+	background-color: #ddd;
+	margin-right: -5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.loginview-fields input[type=checkbox] {
+	font-size: 9px;
+	margin-top: 2px;
+	margin-right: 3px;
+}
+
+.loginview-field-remember {
+	padding: 7px 0 0 17px;
+}
+
+.loginview-field-remember > * {
+	float: left;
+}
+
+.loginview-field-remember:after {
+	content: "."; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+}
+
+.loginview-field-remember div {
+	padding-top: 1px;
+	font-size: 11px;
+	opacity: 0.3;
+}
+
+.loginview-error {
+	font-weight: normal;
+	font-size: 12px;
+	color: #ef5347;
+	margin: 10px auto;
+	overflow-y: hidden;
+	text-align: center;
+	width: 100%;
+}
+
+/* sign in button */
+
+.loginview-signin-holder {
+	margin-top:20px;
+	width: 100%
+}
+
+.loginview-signin button, .loginview-signup-form-signup button {
+	width: 100%;
+	height: 35px;
+	font-size: 14px;
+	color: white;
+	font-weight: bold;
+	background-color: #169dd8;
+	border-color: #0f8cc3;
+	padding-top: 1px;
+	position: relative;
+}
+
+.big-button-spinner-holder {
+	position: relative;
+}
+
+.big-button-spinner {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: -22px;
+	display: inline-block;
+	-webkit-animation: spin 1.2s infinite linear;	
+}
+
+/* footer */
+
+.bar-bottom{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 35px;
+	border-top: 1px solid #d4d6d7;
+	background-color: #f0f0f0;
+}
+
+.mac .bar-bottom {
+	border-radius: 0 0 6px 6px;	
+}
+
+.bar-bottom .settings {
+	float: right;
+	width: auto;
+	margin: 5px 10px 0 10px;
+}
+
+.loginview-footer {
+	border-top: 1px solid #d4d6d7;
+	background-color: #f0f0f0;
+	height: 94px;
+	color: #333333;
+	position: absolute;
+	bottom: 35px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.loginview-footer.initialized {
+	-webkit-transition: height 0.4s ease-in-out;
+}
+
+.loginview-footer.expanded
+{
+	height: 364px;
+}
+
+.loginview-label-signup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.loginview-signup-form-holder
+{
+	padding-top: 42px;
+	position: relative;
+	height: 340px;
+}
+
+.loginview-button-signup button {
+	position: absolute;
+	width: 100%;
+	height: 35px;
+	color: white;
+	background-color: #f57964;
+	border: 1px solid #e55d45;
+	padding-top: 1px;
+}
+
+/* signup form */
+
+.loginview-signup-form {
+	
+}
+
+.loginview-signup-form-label {
+	padding-top: 1px;
+	padding-bottom: 4px;
+	font-weight: bold;
+}
+
+.loginview-signup-form-label span {
+	float: right;
+	padding-top: 2px;
+	color: #ef5347;
+	font-size: 12px;
+}
+
+.loginview-signup-form-label span:after {
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.loginview-signup-form-field {
+	margin-bottom: 15px;
+	-webkit-transition: margin-bottom 0.4s ease-in-out;
+}
+
+.loginview-signup-form-field.error-label input {
+	border-color: #ef5347;
+}
+
+.loginview-signup-form-error {
+	padding-top: 10px;
+	height: 15px;
+	text-align: center;
+	color: #ef5347;
+	font-size: 12px;
+}
+
+.loginview-signup-form-button-holder {
+	width: 100%;
+	padding-top:5px;
+}
+
+.loginview-signup-form-signup.big-button-spinner {
+	top: 1px;
+}
+
+.loginview-signup-form-cancel {
+	display:block;
+	color: #999;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.loginview-signup-form-cancel span {
+	border-bottom: 1px dotted #999;
+}

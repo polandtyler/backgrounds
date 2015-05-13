@@ -1,0 +1,106 @@
+#bibb {
+	position: absolute;
+	z-index: 100;
+	opacity: 0.5;
+	top: -53px;
+	left: -48px;
+}
+
+.mac .welcomeview .container-pointer {
+	fill: white;
+}
+
+.welcome-mac {
+	display: none;
+}
+
+.mac .welcome-mac {
+	display: block;
+}
+
+.mac .welcome-win {
+	display: none;
+}
+
+#welcomeview-container {
+	width: 305px;
+	height: 480px;
+	/*height: 365px;*/
+	position: relative;
+	overflow: hidden;
+}
+
+.welcomeview-header {
+	padding: 10px 20px 11px 20px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #e5e5e5;
+	letter-spacing: -1px;
+}
+
+#welcomeview-carousel-example-generic {
+	height: 315px;
+}
+
+#welcomeview-carousel-example-generic .item {
+	padding: 15px 20px;
+}
+
+#welcomeview-carousel-example-generic .item span {
+	display: block;
+	height: 30px;
+	margin-bottom: 22px;
+	width: 265px;
+}
+
+.welcomeview-footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #f0f0f0;
+	padding: 9px;
+	border-top: 1px solid #d4d6d7;
+	height: 24px;
+}
+
+.welcomeview-footer-holder {
+	position: relative;
+}
+
+.welcome-skip-tour {
+	position: absolute;
+	left: 0px;
+}
+
+.welcome-next-step {
+	position: absolute;
+	right: 0px;
+	background-color: #169dd8;
+	border: 1px solid #1092cb;
+	box-shadow: 0px 1px 1px #22a2da inset;
+	color: white;
+}
+
+.welcomeview-footer .the-carousel-indicators {
+	bottom: 0;
+	text-align: center;
+	padding-top: 3px;
+}
+
+.welcomeview-footer .the-carousel-indicators div {
+	display: inline-block;
+	background-color: #cecece;
+	border: 1px solid #c5c5c5;
+	border-radius: 8px;
+	width: 8px;
+	height: 8px;
+	margin: 0 4px;
+}
+
+.welcomeview-footer .the-carousel-indicators div.active {
+	background-color: #67c167;
+	border: 1px solid #5db75d;
+}
+

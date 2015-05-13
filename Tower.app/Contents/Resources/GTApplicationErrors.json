@@ -1,0 +1,145 @@
+{
+    "domain": "Application",
+    "errors": [
+        {
+            "code": 1,
+            "description": "An error occurred",
+            "failure_reason": "An error occured. Please see the user info for more information",
+            "name": "GenericError"
+        },
+        {
+            "description": "A Validation Error Occurred",
+            "failure_reason": "",
+            "name": "ValidationError"
+        },
+        {
+            "description": "A Git Error Occurred",
+            "failure_reason": "A git error occurred. Please see the Git error message description below for more information.",
+            "name": "GitError"
+        },
+        {
+            "description": "No MergeTool configured",
+            "failure_reason": "Please configure a MergeTool for use with Tower in the preferences.",
+            "name": "MergeToolNotConfiguredError"
+        },
+        {
+            "description": "No DiffTool configured",
+            "failure_reason": "Please configure a DiffTool for use with Tower in the preferences.",
+            "name": "DiffToolNotConfiguredError"
+        },
+        {
+            "description": "Could not add Git repository",
+            "failure_reason": "There is no Git repository at the given path",
+            "name": "CouldNotAddNonExistentGitRepositoryError"
+        },
+        {
+            "description": "Cannot add empty Git Remote URL",
+            "failure_reason": "Git Remote URL is empty",
+            "name": "GitRemoteURLMustNotBeEmptyError"
+        },
+        {
+            "description": "Cannot add Git Remote URL with empty Hostname",
+            "failure_reason": "This Git Remote URL requires a Hostname",
+            "name": "GitRemoteURLHostnameMustNotBeEmptyError"
+        },
+        {
+            "description": "Cannot add Git Remote URL with empty Path",
+            "failure_reason": "This Git Remote URL requires a Path",
+            "name": "GitRemoteURLPathMustNotBeEmptyError"
+        },
+        {
+            "description": "Your Core Data model is outdated",
+            "failure_reason": "Since we are in debug mode, I just deleted all your bookmarks",
+            "name": "CoreDataModelError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "Tower couldn't find a valid Keychain item for this connection or wasn't granted access to the Keychain. Please edit the connection settings to solve this issue.",
+            "name": "GitRemoteConnectionKeychainItemNotFoundError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "Tower couldn't find a valid username for this URL. Please edit the connection settings to solve this issue.",
+            "name": "GitRemoteConnectionUsernameNotSpecifiedInURLError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "Tower couldn't find a service account for this connection. Please connect the service account for this remote in Tower's hosting services manager.",
+            "name": "GitRemoteConnectionServiceAccountNotConfiguredError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "When connecting to service accounts via SSH, the username must be 'git'. Please edit the connection settings to solve this issue.",
+            "name": "GitRemoteConnectionSSHServiceURLUsernameIsNotGitError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "The specified Private Key was not found. Please edit the connection settings and re-check if the key is present at the given location or reconfigure using a different one.",
+            "name": "GitRemoteConnectionPrivateKeyNotFoundError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "Your local SSH agent application doesn't appear to be running. Please restart Mac OS to solve this issue.",
+            "name": "GitRemoteConnectionSSHAgentNotRunningError"
+        },
+        {
+            "description": "Connection Failed",
+            "failure_reason": "The connection requires an SSH key – but no SSH key has been configured for use with this connection. Please edit the connection settings to solve this issue.",
+            "name": "GitRemoteConnectionServicePrivateKeyNotConfiguredError"
+        },
+        {
+            "description": "Connection failed: please verify your credentials",
+            "failure_reason": "Your credentials are invalid",
+            "name": "GitRemoteConnectionAuthenticationError"
+        },
+        {
+            "description": "Connection failed: the URL is not reachable",
+            "failure_reason": "The URL is not reachable",
+            "name": "GitRemoteConnectionURLError"
+        },
+        {
+            "description": "Connection failed",
+            "failure_reason": "Unknown",
+            "name": "GitRemoteConnectionError"
+        },
+        {
+            "description": "Could Not Install Command Line Tools",
+            "failure_reason": "Your version of OS X does not support automatic installation of Apple's \u201cCommand Line Tools\u201d package. Please download and install the latest version from https://developer.apple.com/downloads/.",
+            "name": "CommandLineToolsInstallationError"
+        },
+        {
+            "description": "Could Not Install Command Line Utility",
+            "failure_reason": "",
+            "name": "CommandLineUtilityInstallationError"
+        },
+        {
+            "description": "Invalid Git Binary",
+            "failure_reason": "The binary at %@ is not a valid Git binary.",
+            "failure_reason_keys": [
+                "ApplicationGitBinaryPath"
+            ],
+            "name": "NotAGitBinaryError"
+        },
+        {
+            "description": "Invalid Git Binary",
+            "failure_reason": "The binary at %@ is not supported. The version of the binary is %@ and the minimum required version is %@.",
+            "failure_reason_keys": [
+                "ApplicationGitBinaryPath",
+                "ApplicationGitBinaryVersion",
+                "ApplicationMinimumRequiredGitBinaryVersion"
+            ],
+            "name": "UnsupportedGitBinaryError"
+        }
+    ],
+    "keys": [
+        "GitRepository",
+        "GitBinaryPath",
+        "GitBinaryVersion",
+        "GitRemoteConnectionURL",
+        "GitRemoteConnectionPrivateKeyFilePath",
+        "GitRemoteConnectionErrorReport",
+        "MinimumRequiredGitBinaryVersion",
+        "ApplicationRepositoryPath"
+    ],
+    "prefix": "GT"
+}

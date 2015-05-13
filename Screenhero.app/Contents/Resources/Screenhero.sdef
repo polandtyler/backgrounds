@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Screenhero">
+	<suite name="Screenhero Suite" code="HERO" description="Screenhero Scripts">
+		<command name="get_online_buddies" code="GETONBUD" description="Get online buddies based on the given lookup string.">
+			<cocoa class="SHGetOnlineBuddiesCommand"/>
+			<direct-parameter description="The buddy name to lookup.  Will do partial string matching." type="text"/>
+			<result description="The list of matching buddy names and their associated ID.  The format of each element is &quot;&lt;buddy_id&gt;:::&lt;buddy_name&gt;&quot;.  The buddy_id can be used in other methods such as start_screenshare.">
+				<type type="text" list="yes"/>
+			</result>
+		</command>
+		<command name="start_screenshare" code="STRTSHRE" description="Start a screenshare with the user with the given ID.">
+			<cocoa class="SHStartScreenshareCommand"/>
+			<direct-parameter description="The buddy ID.  This ID can be retrieved with get_online_buddies." type="text"/>
+		</command>
+	</suite>
+</dictionary>

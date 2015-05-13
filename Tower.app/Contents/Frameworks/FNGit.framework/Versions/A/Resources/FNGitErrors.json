@@ -1,0 +1,663 @@
+{
+    "domain": "Git",
+    "errors": [
+        {
+            "code": 1,
+            "description": "A Git Error Occurred",
+            "failure_reason": "A Git command failed to execute. Please see the Git error message below for details.",
+            "name": "GenericError"
+        },
+        {
+            "description": "Git Askpass Error",
+            "failure_reason": "The program set for GIT_ASKPASS did not respond.",
+            "name": "AskpassError"
+        },
+        {
+            "description": "Internal Git API Error",
+            "failure_reason": "Output from a Git command could not be parsed.",
+            "name": "OutputParserError"
+        },
+        {
+            "description": "Failed to Initialize Repository",
+            "failure_reason": "Failed to initialize a new Git repository at path \u201c%@\u201d. The path exists but is not an empty directory.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "InitRepositoryFileExistsError"
+        },
+        {
+            "description": "Failed to Initialize Repository",
+            "failure_reason": "Failed to initialize a new Git repository at path \u201c%@\u201d. The path is not writable for your user.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "InitRepositoryPathNotWritableError"
+        },
+        {
+            "description": "Failed to Initialize Repository",
+            "failure_reason": "Failed to initialize a new Git repository at path \u201c%@\u201d. The path exists but is not an empty directory.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "InitRepositoryInvalidPathError"
+        },
+        {
+            "description": "Failed to Write Description",
+            "failure_reason": "Failed to read the description of the repository at path \u201c%@\u201d. Make sure the path exists and is readable for your user.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "DescriptionReadError"
+        },
+        {
+            "description": "Failed to Write Description",
+            "failure_reason": "Failed to write the description for the repository at path \u201c%@\u201d. Make sure the path is writable for your user.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "DescriptionWriteError"
+        },
+        {
+            "description": "Failed to Write Ignores",
+            "failure_reason": "Failed to read ignores file at path \u201c%@\u201d. Make sure the path exists and is readable for your user.",
+            "failure_reason_keys": [
+                "IgnoresPath"
+            ],
+            "name": "IgnoresReadError"
+        },
+        {
+            "description": "Failed to Write Description",
+            "failure_reason": "Failed to write the ignores file at path \u201c%@\u201d. Make sure the path is writable for your user.",
+            "failure_reason_keys": [
+                "IgnoresPath"
+            ],
+            "name": "IgnoresWriteError"
+        },
+        {
+            "description": "Could Not Add Submodule",
+            "failure_reason": "Could not add the submodule at path \u201c%@\u201d. The path is outside of the repository path.",
+            "failure_reason_keys": [
+                "SubmoduleName"
+            ],
+            "name": "AddSubmodulePathOutsideRepositoryError"
+        },
+        {
+            "description": "Could Not Add Submodule",
+            "failure_reason": "Could not add the submodule at path \u201c%@\u201d. The path already exists.",
+            "failure_reason_keys": [
+                "SubmodulePath"
+            ],
+            "name": "AddSubmodulePathAlreadyExistsError"
+        },
+        {
+            "description": "Could Not Add Submodule",
+            "failure_reason": "Could not add the submodule at path \u201c%@\u201d. A Git directory with the same name already exists.",
+            "failure_reason_keys": [
+                "SubmoduleName"
+            ],
+            "name": "AddSubmoduleGitDirectoryAlreadyExistsError"
+        },
+        {
+            "description": "Could Not Read Blob",
+            "failure_reason": "Could not read blob for current file at path \u201c%@\u201d.",
+            "failure_reason_keys": [
+                "FilePath"
+            ],
+            "name": "BlobReadError"
+        },
+        {
+            "description": "Could Not Stage All Files",
+            "failure_reason": "Could not stage all files. The file path \u201c%@\u201d could not be found.",
+            "failure_reason_keys": [
+                "FilePath"
+            ],
+            "name": "AddFilesError"
+        },
+        {
+            "description": "Could Not Apply Patch",
+            "failure_reason": "Could not apply the patch. The patch seems to be corrupted at line %@.",
+            "failure_reason_keys": [
+                "PatchLineNumber"
+            ],
+            "name": "ApplyPatchCorruptError"
+        },
+        {
+            "description": "Could Not Apply Patch",
+            "failure_reason": "Could not apply the patch because it does not introduce any changes.",
+            "name": "ApplyPatchWithNoChangesError"
+        },
+        {
+            "description": "Could Not Apply Patch",
+            "failure_reason": "Could not apply the patch. The target file of the patch is missing.",
+            "name": "ApplyPatchWithNoTargetError"
+        },
+        {
+            "description": "Could Not Apply Stash",
+            "failure_reason": "A merge conflict occurred while applying the stash. Please resolve all conflicts.",
+            "name": "ApplyStashMergeConflictsError"
+        },
+        {
+            "description": "Could Not Apply Stash",
+            "failure_reason": "Could not apply the stash. The stash could not be found.",
+            "name": "ApplyStashNotFoundError"
+        },
+        {
+            "description": "Could Not Apply Stash",
+            "failure_reason": "Could not apply the stash. You currently do not have any stashes.",
+            "name": "ApplyStashNoStashesError"
+        },
+        {
+            "description": "Could Not Apply Stash",
+            "failure_reason": "Could not apply stash. Your working tree contains changes that would be overwritten. Please commit or stash your changes before applying the stash.",
+            "name": "ApplyStashUncommittedChangesError"
+        },
+        {
+            "description": "Failed to Create Archive",
+            "failure_reason": "The file path \u201c%@\u201d could not be found in revision \u201c%@\u201d.",
+            "failure_reason_keys": [
+                "FilePath",
+                "Revision"
+            ],
+            "name": "ArchiveFilesError"
+        },
+        {
+            "description": "BAD_DEFAULT_REVISION_ERROR_DESCRIPTION",
+            "failure_reason": "BAD_DEFAULT_REVISION_ERROR_FAILURE_REASON",
+            "name": "BadDefaultRevisionError"
+        },
+        {
+            "description": "BAD_REVISION_ERROR_DESCRIPTION",
+            "failure_reason": "BAD_REVISION_ERROR_FAILURE_REASON",
+            "name": "BadRevisionError"
+        },
+        {
+            "description": "Could Not Load Blob",
+            "failure_reason": "Could not load blob. The object does not exist.",
+            "name": "BlobNotFoundError"
+        },
+        {
+            "description": "Could Not Checkout Revision",
+            "failure_reason": "Could not checkout revision \u201c%@\u201d. The working tree contains changes that would have been overwritten. Please commit or stash all changes and try again.",
+            "failure_reason_keys": [
+                "Revision"
+            ],
+            "name": "CheckoutUncommittedChangesError"
+        },
+        {
+            "description": "Internal Git API Error",
+            "failure_reason": "A Git command failed to execute because of wrong arguments.",
+            "name": "CommandUsageError"
+        },
+        {
+            "description": "Could Not Read Config Key Value",
+            "failure_reason": "The config key \u201c%@\u201d either has multiple values or could not be returned as a boolean or integer value.",
+            "failure_reason_keys": [
+                "ConfigKey"
+            ],
+            "name": "ConfigBadValueError"
+        },
+        {
+            "description": "CONFIG_INVALID_FILE_ERROR_DESCRIPTION",
+            "failure_reason": "CONFIG_INVALID_FILE_ERROR_FAILURE_REASON",
+            "name": "ConfigInvalidFileError"
+        },
+        {
+            "description": "Could Not Find Config Key",
+            "failure_reason": "The config key \u201c%@\u201d does not exit.",
+            "failure_reason_keys": [
+                "ConfigKey"
+            ],
+            "name": "ConfigKeyNotFoundError"
+        },
+        {
+            "description": "Config Key Has Multiple Values",
+            "failure_reason": "The config key \u201c%@\u201d has multiple values but retrieving or setting a single value was requested.",
+            "failure_reason_keys": [
+                "ConfigKey"
+            ],
+            "name": "ConfigMultipleValuesForKeyError"
+        },
+        {
+            "description": "Could Not Read Config File",
+            "failure_reason": "Unable to read the config file at path \u201c%@\u201d. Please make sure the config file is a valid Git configuration file and that you have permissions to read it.",
+            "failure_reason_keys": [
+                "ConfigFile"
+            ],
+            "name": "ConfigReadError"
+        },
+        {
+            "description": "Could Not Find Config Section",
+            "failure_reason": "A config section with name \u201c%@\u201d could not be found.",
+            "name": "ConfigSectionNotFoundError"
+        },
+        {
+            "description": "Could Not Write Config File",
+            "failure_reason": "Unable to write to the config file at path \u201c%@\u201d. Please make sure you have permissions to write the config file.",
+            "failure_reason_keys": [
+                "ConfigFile"
+            ],
+            "name": "ConfigWriteError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "Could not create new branch from stash. \u201c%@\u201d is not a valid branch name.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "CreateBranchFromStashInvalidNameError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "Could not create new branch from stash. The stash could not be found.",
+            "name": "CreateBranchFromStashNotFoundError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "Could not create new branch from stash. You currently do not have any stashes.",
+            "name": "CreateBranchFromStashNoStashesError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "Could not create new branch from stash. Your working tree contains changes that would be overwritten. Please commit or stash your changes before creating a new branch from the stash.",
+            "name": "CreateBranchFromStashUncommittedChangesError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "Ref names may not contain spaces, slashes, dots or control characters.",
+            "name": "CreateBranchInvalidNameError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "The revision referenced by \u201c%@\u201d does not appear to be valid.",
+            "failure_reason_keys": [
+                "Revision"
+            ],
+            "name": "CreateBranchInvalidObjectError"
+        },
+        {
+            "description": "Could Not Create Branch",
+            "failure_reason": "A branch with name \u201c%@\u201d already exists.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "CreateBranchRefAlreadyExistsError"
+        },
+        {
+            "description": "Could Not Create Remote",
+            "failure_reason": "A remote with name \u201c%@\u201d already exists",
+            "failure_reason_keys": [
+                "RemoteName"
+            ],
+            "name": "CreateRemoteAlreadyExistsError"
+        },
+        {
+            "description": "Could Not Create Remote",
+            "failure_reason": "The remote name \u201c%@\u201d is invalid.",
+            "failure_reason_keys": [
+                "RemoteName"
+            ],
+            "name": "CreateRemoteInvalidNameError"
+        },
+        {
+            "description": "Could Not Create Tag",
+            "failure_reason": "A tag with name \u201c%@\u201d already exists.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "CreateTagAlreadyExistsError"
+        },
+        {
+            "description": "Could Not Create Tag",
+            "failure_reason": "The revision referenced by \u201c%@\u201d does not appear to be valid.",
+            "failure_reason_keys": [
+                "Revision"
+            ],
+            "name": "CreateTagInvalidObjectError"
+        },
+        {
+            "description": "Could Not Delete Branch",
+            "failure_reason": "Could not find a branch with name \u201c%@\u201d.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "DeleteBranchNoSuchBranchError"
+        },
+        {
+            "description": "Could Not Delete Branch",
+            "failure_reason": "Branch \u201c%@\u201d is your current HEAD. You cannot delete the branch you are currently on.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "DeleteCurrentBranchError"
+        },
+        {
+            "description": "Could Not Delete Tag",
+            "failure_reason": "Could not find a tag with name \u201c%@\u201d.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "DeleteTagNotFoundError"
+        },
+        {
+            "description": "Could Not Delete Branches",
+            "failure_reason": "Some branches are not fully merged and need to be deleted with the force option.",
+            "name": "DeleteUnmergedBranchError"
+        },
+        {
+            "description": "Could Not Drop Stash",
+            "failure_reason": "Could not drop the stash. The stash could not be found.",
+            "name": "DropStashNotFoundError"
+        },
+        {
+            "description": "Could Not Drop Stash",
+            "failure_reason": "Could not drop the stash. You currently do not have any stashes.",
+            "name": "DropStashNoStashesError"
+        },
+        {
+            "description": "Git-SVN Installation Error",
+            "failure_reason": "The git-svn installation could not find required libraries. Please check your Git and git-svn installation.",
+            "name": "SVNInstallationError"
+        },
+        {
+            "description": "Index Locked by Another Git Process",
+            "failure_reason": "The repository at path \u201c%@\u201d is locked by another Git process. If there is no other Git process running, the file \u201c.git/index.lock\u201d needs to be removed manually.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "IndexLockError"
+        },
+        {
+            "description": "LOG_NO_SUCH_REVISION_ERROR_DESCRIPTION",
+            "failure_reason": "LOG_NO_SUCH_REVISION_ERROR_FAILURE_REASON",
+            "name": "LogNoSuchRevisionError"
+        },
+        {
+            "description": "Merging Failed",
+            "failure_reason": "Could not merge all changes automatically. Please resolve all conflicts and commit to complete the merge.",
+            "name": "MergeConflictsError"
+        },
+        {
+            "description": "Merging Failed",
+            "failure_reason": "Could not start merge. Your working tree contains changes that would be overwritten by merge. Please commit or stash your changes before merging.",
+            "name": "MergeUncommittedChangesError"
+        },
+        {
+            "description": "Merging Failed",
+            "failure_reason": "Could not start merge. Your working tree contains unmerged changes. Please resolve and commit any changes before merging.",
+            "name": "MergeUnmergedChangesError"
+        },
+        {
+            "description": "MERGETOOL_MERGE_FAILED_ERROR_DESCRIPTION",
+            "failure_reason": "MERGETOOL_MERGE_FAILED_ERROR_FAILURE_REASON",
+            "name": "MergetoolMergeFailedError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The destination file already exists.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileAlreadyExistsError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The destination directory does not exist.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileDestinationDirectoryMissingError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The file is not under version control.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileNotUnderVersionControlError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The destination file is outside the repository.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileOutsideRepositoryError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The source and destination file are identical.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileSelfTargetError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The file is a directory and not under version control.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileSourceDirectoryEmptyError"
+        },
+        {
+            "description": "Could Not Rename File",
+            "failure_reason": "Could not move the file \u201c%@\u201d to \u201c%@\u201d. The source file does not exist.",
+            "failure_reason_keys": [
+                "SourceFilePath",
+                "DestinationFilePath"
+            ],
+            "name": "MoveFileSourceNotFoundError"
+        },
+        {
+            "description": "Synchronization With Remote Failed",
+            "failure_reason": "Synchronization with the remote failed. There is no remote branch configured to merge with branch \u201c%@\u201d by default.",
+            "failure_reason_keys": [
+                "RefName"
+            ],
+            "name": "NoDefaultMergeBranchError"
+        },
+        {
+            "description": "No Git Repository Found",
+            "failure_reason": "The path \u201c%@\u201d does not contain a valid Git repository.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "NoGitRepoError"
+        },
+        {
+            "description": "NO_REFS_ERROR_DESCRIPTION",
+            "failure_reason": "NO_REFS_ERROR_FAILURE_REASON",
+            "name": "NoRefsError"
+        },
+        {
+            "description": "No Working Tree Found",
+            "failure_reason": "The Git command requires to be run in a working tree and the repository at path \u201c%@\u201d appears to be a bare repository.",
+            "failure_reason_keys": [
+                "RepositoryPath"
+            ],
+            "name": "NoWorkTreeError"
+        },
+        {
+            "description": "Rebase Failed",
+            "failure_reason": "A merge conflict occurred while rebasing. Please resolve all conflicts and press continue to commit your changes and to proceed with the next commit.",
+            "name": "RebaseConflictsError"
+        },
+        {
+            "description": "Rebase Failed",
+            "failure_reason": "Could not start rebase. Your working tree contains changes that would be overwritten by rebase. Please commit or stash your changes before rebasing.",
+            "name": "RebaseUncommittedChangesError"
+        },
+        {
+            "description": "Rebase Failed",
+            "failure_reason": "Failed to continue with rebase. You have to resolve all unmerged changes before you can continue.",
+            "name": "RebaseUnmergedChangesError"
+        },
+        {
+            "description": "REFS_READ_ERROR_DESCRIPTION",
+            "failure_reason": "REFS_READ_ERROR_FAILURE_REASON",
+            "name": "RefsReadError"
+        },
+        {
+            "description": "Connection to Remote Failed",
+            "failure_reason": "Unable to connect to the remote repository. Please verify the URL and authentication information.",
+            "name": "RemoteAuthError"
+        },
+        {
+            "description": "Connection to Remote Failed",
+            "failure_reason": "Unable to connect to the remote repository. Please verify the URL and authentication information.",
+            "name": "RemoteConnectionError"
+        },
+        {
+            "description": "Synchronization With Remote Failed",
+            "failure_reason": "Synchronization with the remote failed. The current branch has no upstream branch configured. Please set up a tracking for the current branch.",
+            "name": "RemotePushNoUpstreamBranchError"
+        },
+        {
+            "description": "Synchronization With Remote Failed",
+            "failure_reason": "Synchronization with the remote failed. The commit history of branch \u201c%@\u201d can not be appended to the remote commit history. If you enforce it, it might result in the loss of commits.\n\nThis usually happens when you change a commit after you have already pushed it to the remote.",
+            "failure_reason_keys": [
+                "RemoteName"
+            ],
+            "name": "RemotePushRejectedError"
+        },
+        {
+            "description": "Synchronization With Remote Failed",
+            "failure_reason": "Connection to the remote was successful but an error was encountered.",
+            "name": "RemoteSyncError"
+        },
+        {
+            "description": "RENAME_BRANCH_INVALID_OBJECT_ERROR_DESCRIPTION",
+            "failure_reason": "RENAME_BRANCH_INVALID_OBJECT_ERROR_FAILURE_REASON",
+            "name": "RenameBranchInvalidObjectError"
+        },
+        {
+            "description": "RENAME_BRANCH_REF_ALREADY_EXISTS_ERROR_DESCRIPTION",
+            "failure_reason": "RENAME_BRANCH_REF_ALREADY_EXISTS_ERROR_FAILURE_REASON",
+            "name": "RenameBranchRefAlreadyExistsError"
+        },
+        {
+            "description": "Remote Name Already Exists",
+            "failure_reason": "A remote with name \u201c%@\u201d already exists. Please choose another name.",
+            "failure_reason_keys": [
+                "RemoteName"
+            ],
+            "name": "RenameRemoteAlreadyExistsError"
+        },
+        {
+            "description": "Invalid Remote Name",
+            "failure_reason": "Remote names may not contain spaces, slashes, dots or control characters.",
+            "name": "RenameRemoteInvalidNameError"
+        },
+        {
+            "description": "Operation Not Permitted",
+            "failure_reason": "Could not remove file at path '%@'.",
+            "failure_reason_keys": [
+                "SubmodulePath"
+            ],
+            "name": "RemoveOperationNotPermittedError"
+        },
+        {
+            "description": "Could Not Remove Files",
+            "failure_reason": "Could not remove files with local modifications.",
+            "name": "RemoveFileWithLocalModificationsError"
+        },
+        {
+            "description": "Could Not Remove Submodule",
+            "failure_reason": "Could not remove submodule at path “%@”. The submodule has local modifications.",
+            "failure_reason_keys": [
+                "SubmodulePath"
+            ],
+            "name": "RemoveSubmoduleWithLocalModificationsError"
+        },
+        {
+            "description": "Could Not Save Stash",
+            "failure_reason": "Could not save stash. You need the initial commit first.",
+            "name": "SaveStashInitialCommitError"
+        },
+        {
+            "description": "",
+            "failure_reason": "",
+            "name": "SubmoduleStatusMissingMappingError"
+        },
+        {
+            "description": "",
+            "failure_reason": "",
+            "name": "SubmoduleStatusMissingGitDirError"
+        },
+        {
+            "description": "TRACK_BRANCH_INVALID_OBJECT_ERROR_DESCRIPTION",
+            "failure_reason": "TRACK_BRANCH_INVALID_OBJECT_ERROR_FAILURE_REASON",
+            "name": "TrackBranchInvalidObjectError"
+        },
+        {
+            "description": "Could Not Load Tree",
+            "failure_reason": "Could not load Git tree for \u201c%@\u201d. The specified object is not a tree object.",
+            "failure_reason_keys": [
+                "ObjectHash"
+            ],
+            "name": "TreeNotATreeObjectError"
+        },
+        {
+            "description": "Could Not Load Tree",
+            "failure_reason": "Could not load Git tree for SHA \u201c%@\u201d. The specified object does not exist.",
+            "failure_reason_keys": [
+                "ObjectHash"
+            ],
+            "name": "TreeNotFoundError"
+        },
+        {
+            "description": "Could Not Update Index",
+            "failure_reason": "Could not update the index. The file \u201c%@\u201d does not exist or is not under version control.",
+            "failure_reason_keys": [
+                "FilePath"
+            ],
+            "name": "UpdateIndexNoSuchFileError"
+        }
+    ],
+    "keys": [
+        "BinaryVersion",
+        "CommandCall",
+        "ErrorOutput",
+        "CommandExitCode",
+        "CommandErrorOutput",
+        "CommandStandardOutput",
+        "CommandEnvironment",
+        "ConfigFile",
+        "ConfigKey",
+        "ConfigValue",
+        "ConfigNewSectionName",
+        "ConfigSectionName",
+        "DestinationFilePath",
+        "FilePath",
+        "FilePaths",
+        "IgnoresPath",
+        "NewRefName",
+        "NewRemoteName",
+        "NewSubmoduleName",
+        "ObjectHash",
+        "ObjectReference",
+        "OutputParserName",
+        "OutputParserLine",
+        "Patch",
+        "PatchLineNumber",
+        "RebaseCurrentStep",
+        "RebaseLastStep",
+        "RebaseSubject",
+        "RefName",
+        "RefSpec",
+        "RemoteName",
+        "RemoteURL",
+        "RepositoryPath",
+        "Revision",
+        "SourceFilePath",
+        "SubmoduleName",
+        "SubmodulePath"
+    ],
+    "prefix": "FN"
+}

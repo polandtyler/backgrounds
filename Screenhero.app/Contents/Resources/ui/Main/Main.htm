@@ -1,0 +1,14 @@
+    <div class="main-subcontainer {{Utils.shouldShowBorder?"mac":""}}" id="BlankView-container">
+	    {{#Utils.shouldShowBorder}}
+	    <div class="blank-view container-pointer-holder">
+	        <div class="blank-view container-pointer">
+				{{{ ResourceManager.getSVG("chrome-pointer.svg" )}}}
+		    </div>
+	    </div>
+	    {{/Utils.shouldShowBorder}}
+	    <div id="blank-view-container" class="mainwindow-content-container"/>    	
+    </div>
+    <div class="main-subcontainer {{Utils.shouldShowBorder?"mac":""}}" id="LoginView-container"></div>
+    <div class="main-subcontainer {{Utils.shouldShowBorder?"mac":""}}" id="BuddyList-container"></div>
+    <div class="main-subcontainer {{Utils.shouldShowBorder?"mac":""}}" id="ChatWindow-container"></div>
+    <div class="main-subcontainer {{Utils.shouldShowBorder?"mac":""}}" id="WelcomeView-container"></div>

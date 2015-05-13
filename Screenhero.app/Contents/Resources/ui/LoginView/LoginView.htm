@@ -1,0 +1,75 @@
+{{# (Main.loginState != Main.loginStates.signedIn) && didReceiveLaunchSignalFromNative }}
+    {{#Utils.shouldShowBorder}}
+    <div class="loginview container-pointer-holder" intro="fade" outro="fade">
+        <div class="loginview container-pointer" intro="fade" outro="fade">
+            {{{ ResourceManager.getSVG("chrome-pointer.svg" )}}}
+        </div>
+    </div>
+    {{/Utils.shouldShowBorder}}
+    <div id="loginview-container" class="mainwindow-content-container" intro="fade" outro="fade">
+        <div class="loginview-header">
+            <div class="loginview-logo">
+                    {{{ ResourceManager.getSVG("screenhero-logo.svg") }}}
+            </div>
+        </div>
+        <div class="loginview-content">
+            <div class="loginview-fields">
+                <div class="loginview-label-email">Email</div>
+                <div class="loginview-field-email"><input class="signInEmail rounded" type="text" value="{{signInEmail}}" on-enter="signInButtonClicked" disabled="{{isLoggingIn(Main.loginState)}}"/></div>
+                <div class="loginview-label-password clearfix"><span>Password</span><div class="forgot-password-label" on-click="forgotPasswordLabelClicked">Forgot Password?</div></div>
+                <div class="loginview-field-password"><input class="signInPassword rounded" type="password" value="{{signInPassword}}" on-enter="signInButtonClicked" disabled="{{isLoggingIn(Main.loginState)}}"/></div>
+                <div class="loginview-field-remember"><input type="checkbox" checked="{{signInShouldSavePassword}}" disabled="{{isLoggingIn(Main.loginState)}}"/><div on-click="rememberPasswordLabelClicked">Sign me in when Screenhero starts</div></div>
+                <div class="loginview-signin-holder">
+                    <div class="loginview-signin">
+                        <button class="signInButton button" on-click="signInButtonClicked">{{^isLoggingIn(Main.loginState)}}Sign Me In{{/isLoggingIn(Main.loginState)}}{{#isLoggingIn(Main.loginState)}}<span class="big-button-spinner-holder"><span class="big-button-spinner">{{{ ResourceManager.getSVG("spinner.svg") }}}</span> Cancel</span>{{/isLoggingIn(Main.loginState)}}</button>
+                    </div>
+                </div>
+                <div class="loginview-error"><span intro="fade">{{errorText}}</span></div>
+            </div>
+        </div>
+        
+        <div class="loginview-footer {{footerInitialized?"initialized":""}} {{ shouldShowSignUpForm ? "expanded" : "" }}">
+            {{^shouldShowSignUpForm}}
+            <div class="loginview-label-signup" intro-outro="fade">Don't have a Screenhero account?</div>
+            {{/shouldShowSignUpForm}}
+            {{#shouldShowSignUpForm}}
+            <div class="loginview-label-signup" intro-outro="fade">Create your Screenhero account</div>
+            {{/shouldShowSignUpForm}}
+            <div class="loginview-signup-form-holder">
+                {{^shouldShowSignUpForm}}
+                <div class="loginview-button-signup" intro="fade" outro="fade"><button on-click="toggleSignUpFormClicked" class="button">Create a New Account</button></div>
+
+                {{/shouldShowSignUpForm}}
+                {{#shouldShowSignUpForm}}
+                <div class="loginview-signup-form" intro="fade" outro="fade">
+    	            <div class="loginview-fields">
+    	                <div class="loginview-signup-form-label">Name</div>
+    	                <div class="loginview-signup-form-field"><input class="signUpName rounded" type="text" value="{{signUpName}}" on-enter="signUpButtonClicked"/></div>
+    	                <div class="loginview-signup-form-label">Email{{#(firstEmailEntryComplete&&!isEmailValid(signUpEmail))}}<span intro="fade" outro="fade">Enter valid email</span>{{/0}}</div>
+    	                <div class="loginview-signup-form-field {{(!firstEmailEntryComplete||isEmailValid(signUpEmail))?"":"error-label"}}"><input class="signUpEmail rounded" type="text" value="{{signUpEmail}}" onblur="LoginView.emailFieldDidBlur()" on-enter="signUpButtonClicked"/></div>
+    	                <div class="loginview-signup-form-label">Password{{#(firstPasswordEntryComplete&&!isPasswordValid(signUpPassword))}}<span intro="fade" outro="fade">Can't be blank</span>{{/0}}</div>
+    	                <div class="loginview-signup-form-field {{(!firstPasswordEntryComplete||isPasswordValid(signUpPassword))?"":"error-label"}}"><input class="signUpPassword rounded" type="password" value="{{signUpPassword}}" onblur="LoginView.passwordFieldDidBlur()" on-enter="signUpButtonClicked"/></div>
+                        <div class="loginview-signup-form-button-holder">
+        		            <div class="loginview-signup-form-signup">
+                                <button on-click="signUpButtonClicked" class="button" disabled="{{isCreatingAccount}}">{{^isCreatingAccount}}Sign Up{{/isCreatingAccount}}{{#isCreatingAccount}}<span class="big-button-spinner-holder"><span class="big-button-spinner">{{{ ResourceManager.getSVG("spinner.svg") }}}</span> Signing Up...</span>{{/isCreatingAccount}}</button>
+                            </div>
+                            {{#signUpError}}
+                            <div class="loginview-signup-form-error" intro="slide" outro="slide">{{signUpError}}</div>
+                            {{/signUpError}}
+        	            	<div class="loginview-signup-form-cancel" on-click="toggleSignUpFormClicked"><span>Cancel</span></div>
+                        </div>
+    	            </div>
+                </div>
+                {{/shouldShowSignUpForm}}
+            </div>
+
+        </div><!-- /loginview-footer -->
+
+            <div class="bar-bottom">
+                <div class="settings btn-icon" on-click="loginViewSettingsButtonClicked">
+                        {{{ ResourceManager.getSVG("btn-settings.svg") }}}
+                </div>
+            </div>
+
+    </div><!-- /loginview-container -->
+{{/ 0 }}

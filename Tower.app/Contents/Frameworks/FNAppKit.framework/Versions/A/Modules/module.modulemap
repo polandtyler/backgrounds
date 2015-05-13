@@ -1,0 +1,6 @@
+framework module FNAppKit {
+  umbrella header "FNAppKit.h"
+
+  export *
+  module * { export * }
+}
